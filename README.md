@@ -1,5 +1,6 @@
 # vue-auto-import-loader
 
+[![Build Status](https://circleci.com/gh/WEBuster/vue-auto-import-loader/tree/master.svg?style=shield)](https://circleci.com/gh/WEBuster/vue-auto-import-loader/tree/master)
 [![Version](https://img.shields.io/npm/v/vue-auto-import-loader.svg?style=flat-square)](https://www.npmjs.com/package/vue-auto-import-loader)
 [![License](https://img.shields.io/npm/l/vue-auto-import-loader.svg?style=flat-square)](LICENSE)
 
@@ -28,7 +29,7 @@ npm i -D vue-auto-import-loader
     files: {  // relative to *.vue file path
       html: '[name].html',
       css: '[name].css',
-      js: '[name].js',
+      js: '[name].js'
     }
   }
 }
