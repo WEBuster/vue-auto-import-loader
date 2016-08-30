@@ -27,9 +27,14 @@ npm i -D vue-auto-import-loader
   vueAutoImport: {
     scoped: false,
     files: {  // relative to *.vue file path
-      html: '[name].html',
-      css: '[name].css',
-      js: '[name].js'
+      template: '[name].html',
+      style: '[name].css',
+      script: '[name].js'
+    },
+    langs: {
+      template: 'html',
+      style: 'css',
+      script: 'js'
     }
   }
 }

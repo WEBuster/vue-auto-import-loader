@@ -100,9 +100,9 @@ describe('vue-auto-import-loader', function () {
       entry: './test/fixtures/blank-specific-name/blank.vue',
       vueAutoImport: {
         files: {
-          html: 'template.html',
-          css: 'style.css',
-          js: 'script.js'
+          template: 'template.html',
+          style: 'style.css',
+          script: 'script.js'
         }
       }
     }, function (fragment) {

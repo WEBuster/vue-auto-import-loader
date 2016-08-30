@@ -1,6 +1,6 @@
 {
   "name": "vue-auto-import-loader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Auto import template / style / script for *.vue file.",
   "main": "index.js",
   "scripts": {
