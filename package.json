@@ -1,6 +1,6 @@
 {
   "name": "vue-auto-import-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Auto import template / style / script for *.vue file.",
   "main": "index.js",
   "scripts": {
@@ -32,8 +32,5 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",
     "webpack": "^1.13.2"
-  },
-  "peerDependencies": {
-    "vue-loader": "*"
   }
 }
