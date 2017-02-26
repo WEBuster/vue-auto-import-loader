@@ -17,25 +17,33 @@ npm i -D vue-auto-import-loader
 ```js
 {
   module: {
-      loaders: [
+    rules: [
+      {
+        test: /\.vue$/,
+        use: [
           {
-              test: /\.vue$/,
-              loader: 'vue!vue-auto-import'
+            loader: 'vue-loader',
+            options: {}  // vue-loader options
+          },
+          {
+            loader: 'vue-auto-import-loader',
+            options: {
+              scoped: false,
+              files: {  // relative to *.vue file path
+                template: '[name].html',
+                style: '[name].css',
+                script: '[name].js'
+              },
+              langs: {
+                template: 'html',
+                style: 'css',
+                script: 'js'
+              }
+            }
           }
-      ]
-  },
-  vueAutoImport: {
-    scoped: false,
-    files: {  // relative to *.vue file path
-      template: '[name].html',
-      style: '[name].css',
-      script: '[name].js'
-    },
-    langs: {
-      template: 'html',
-      style: 'css',
-      script: 'js'
-    }
+        ]
+      }
+    ]
   }
 }
 ```
