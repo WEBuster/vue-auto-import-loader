@@ -1,6 +1,6 @@
 {
   "name": "vue-auto-import-loader",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Auto import template / style / script for *.vue file.",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/WEBuster/vue-auto-import-loader#readme",
   "dependencies": {
     "hash-sum": "^1.0.2",
+    "loader-utils": "^1.0.2",
     "lru-cache": "^4.0.1",
     "parse5": "^2.2.0"
   },
@@ -31,6 +32,6 @@
     "mocha": "^3.0.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",
-    "webpack": "^1.13.2"
+    "webpack": "^2.2.1"
   }
 }

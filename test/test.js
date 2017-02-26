@@ -8,17 +8,22 @@ var expect = require('chai').expect
 describe('vue-auto-import-loader', function () {
 
   var outputDir = path.resolve(__dirname, './output')
-  var loaderPath = 'raw!' + path.resolve(__dirname, '../')
+  var loaderPath = path.resolve(__dirname, '..')
   var globalConfig = {
     output: {
       path: outputDir,
       filename: 'test.build.vue'
     },
+    resolveLoader: {
+      alias: {
+        'vue-auto-import-loader': loaderPath
+      }
+    },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.vue$/,
-          loader: loaderPath
+          use: ['raw-loader', 'vue-auto-import-loader']
         }
       ]
     }
@@ -98,12 +103,25 @@ describe('vue-auto-import-loader', function () {
   it('blank-specific-name', function (done) {
     test({
       entry: './test/fixtures/blank-specific-name/blank.vue',
-      vueAutoImport: {
-        files: {
-          template: 'template.html',
-          style: 'style.css',
-          script: 'script.js'
-        }
+      module: {
+        rules: [
+          {
+            test: /\.vue$/,
+            use: [
+              'raw-loader',
+              {
+                loader: 'vue-auto-import-loader',
+                options: {
+                  files: {
+                    template: 'template.html',
+                    style: 'style.css',
+                    script: 'script.js'
+                  }
+                }
+              }
+            ]
+          }
+        ]
       }
     }, function (fragment) {
       var typeList = []
@@ -166,8 +184,21 @@ describe('vue-auto-import-loader', function () {
   it('scoped', function (done) {
     test({
       entry: './test/fixtures/scoped/scoped.vue',
-      vueAutoImport: {
-        scoped: true
+      module: {
+        rules: [
+          {
+            test: /\.vue$/,
+            use: [
+              'raw-loader',
+              {
+                loader: 'vue-auto-import-loader',
+                options: {
+                  scoped: true
+                }
+              }
+            ]
+          }
+        ]
       }
     }, function (fragment) {
       var node = fragment.childNodes[0]
